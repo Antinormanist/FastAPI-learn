@@ -23,4 +23,4 @@ app.include_router(vote.router)
 
 @app.get('/')
 def main():
-    return {'Hello': 'Antinormanist was here'}
+    return {'Hello': 'Corigi was here'}

@@ -7,9 +7,10 @@ DB = config('DB')
 DB_USER = config('DB_USER')
 DB_USER_PSWRD = config('DB_USER_PSWRD')
 DB_HOST = config('DB_HOST')
+DB_PORT = config('DB_PORT')
 DB_NAME = config('DB_NAME')
 
-engine = create_engine(f'{DB}://{DB_USER}:{DB_USER_PSWRD}@{DB_HOST}/{DB_NAME}', echo=True)
+engine = create_engine(f'{DB}://{DB_USER}:{DB_USER_PSWRD}@{DB_HOST}:{DB_PORT}/{DB_NAME}', echo=True)
 SessionLocal = sessionmaker(engine)
 Base = declarative_base()
 
