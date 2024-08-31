@@ -5,27 +5,19 @@ on:
 
 jobs:
   job1:
+    environment:
+      SECRET_KEY
     env:
-      SECRET_KEY:
-        cd18c009a67b28f67c800aba797a62ef79ee96c5f0a694bf9dddb02dbcc26835
-      ALGORITHM:
-        HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES:
-        60
-      DB:
-        postgresql+psycopg
-      DB_USER:
-        root
-      DB_USER_PSWRD:
-        rfnz230691
-      DB_HOST:
-        postgres
-      DB_HOST_TEST:
-        172.17.0.2
-      DB_PORT:
-        5432
-      DB_NAME:
-        papa_db
+      SECRET_KEY: ${{SECRET_KEY}}
+      ALGORITHM: ${{ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{ACCESS_TOKEN_EXPIRE_MINUTES}}
+      DB: ${{DB}}
+      DB_USER: ${{DB_USER}}
+      DB_USER_PSWRD: ${{DB_USER_PSWRD}}
+      DB_HOST: ${{DB_HOST}}
+      DB_HOST_TEST: ${{DB_HOST_TEST}}
+      DB_PORT: ${{DB_PORT}}
+      DB_NAME: ${{DB_NAME}}
     runs-on: ubuntu-latest
     steps:
       - name: pulling git repo
